@@ -19,7 +19,7 @@ export default function Reservations({
 }) {
   const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
   const { loading, error, data, fetchAvailabilities } = useAvailabilities();
-  console.log("🚀 ~ file: Reservations.tsx:19 ~ data:", data);
+  // console.log("🚀 ~ file: Reservations.tsx:19 ~ data:", data);
   const [time, setTime] = useState(openTime);
   const [partySize, setPartySize] = useState("2");
   const [day, setDay] = useState(new Date().toISOString().split("T")[0]);
@@ -119,6 +119,7 @@ export default function Reservations({
             <div className="flex flex-wrap mt-2">
               {data.map((time) => {
                 return time.available ? (
+                    
                   <Link
                     href={`/reserve/${slug}?date=${day}T${time.time}&partySize=${partySize}`}
                     className="bg-red-600 cursor-pointer p-2 w-24 text-center text-white mb-3 rounded mr-3"

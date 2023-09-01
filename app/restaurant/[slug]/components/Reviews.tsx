@@ -3,7 +3,7 @@ import { ReviewCardType } from "../page";
 interface Props {
   review: ReviewCardType;
 }
-export default function Reviews({review}:{review: Props }) {
+export default function Reviews({review}:{review: Props["review"] }) {
   // console.log(review);
   return (
     <div>

@@ -77,7 +77,6 @@ export default async function handler(
         email,
         city,
         phone,
-        email,
         password: hashedPassword,
       },
     });

@@ -1,6 +1,6 @@
 
 
-const displayTimeObject = {
+const displayTimeObject: { [key: string]: any } = {
     "00:00:00.000Z": "12:00 AM",
     "00:30:00.000Z": "12:30 AM",
     "01:00:00.000Z": "1:00 AM",
@@ -53,6 +53,6 @@ const displayTimeObject = {
 
   export type Time = keyof typeof displayTimeObject
   
-  export const convertToDisplayTime = (time: Time) => {
+  export const convertToDisplayTime = (time: string) => {
     return displayTimeObject[time]
   }

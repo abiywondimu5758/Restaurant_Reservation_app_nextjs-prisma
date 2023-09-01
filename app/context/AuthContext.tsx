@@ -41,7 +41,7 @@ export default function AuthContext({
 }: {
   children: React.ReactNode;
 }) {
-  const [authState, setAuthState] = useState<State>({
+  const [authState, setAuthState] = useState({
     loading: true,
     data: null,
     error: null,

@@ -19,13 +19,13 @@ interface Restaurant {
   open_time: string;
   close_time:string;
 }
-// export interface ReviewCardType {
-//   id: number;
-//   first_name: string;
-//   last_name: string;
-//   text: string;
-//   rating: string;
-// }
+export interface ReviewCardType {
+  id: number;
+  first_name: string;
+  last_name: string;
+  text: string;
+  rating: number;
+}
 
 const fetchRestaurantBySlug = async (slug: string): Promise<Restaurant> => {
   const restaurant = await prisma.restaurant.findUnique({
@@ -68,7 +68,7 @@ export default async function RestaurantDetails({
     <h1 className="font-bold text-3xl mt-10 mb-7 borber-b pb-5">
       What {restaurant.review.length>1? `${restaurant.review.length} people are` : 'a person is' } saying
     </h1>
-          {restaurant.review.map((review: Review[]) => (
+          {restaurant.review.map((review: Review) => (
             <Reviews review={review} />
           ))}
         </div>
